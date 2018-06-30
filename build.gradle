@@ -1,0 +1,46 @@
+buildscript {
+    ext {
+        springBootVersion = "1.5.12.RELEASE"
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: "java"
+apply plugin: "application"
+apply plugin: "org.springframework.boot"
+
+jar.archiveName = "midnight-club-server.jar"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+bootRun {
+    systemProperties = System.properties
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    runtime("org.springframework.boot:spring-boot-devtools")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    compileOnly("com.google.errorprone:error_prone_core:2.0.19")
+
+    compile("joda-time:joda-time:2.9.6")
+    compile("com.google.guava:guava:21.0")
+    compile("org.projectlombok:lombok:1.16.10")
+    compile("org.apache.commons:commons-lang3:3.5")
+    compile("commons-collections:commons-collections:3.2.2")
+    compile("commons-io:commons-io:2.5")
+    compile("org.apache.httpcomponents:httpclient:4.5.3")
+}
