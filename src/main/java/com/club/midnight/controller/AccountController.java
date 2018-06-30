@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/account")
 public class AccountController {
@@ -12,21 +14,22 @@ public class AccountController {
     @Autowired
     private UserInfoService userInfoService;
 
+    @ResponseBody
     @PostMapping("/signUp")
-    public void signUp(@RequestParam String id, @RequestParam String password) {
-        userInfoService.signUp(id, password);
+    public String signUp(HttpServletRequest request) {
+        return userInfoService.signUp(request);
     }
 
     @ResponseBody
     @PostMapping("/logIn")
-    public String logIn(@RequestParam String id, @RequestParam String password) {
-        return userInfoService.logIn(id, password);
+    public String logIn(HttpServletRequest request) {
+        return userInfoService.logIn(request);
     }
 
     @ResponseBody
     @PostMapping("/levelUp")
-    public String levelUp(@RequestParam String id, @RequestParam String target, @RequestParam String userType) {
-        return userInfoService.levelUp(id, target, userType);
+    public String levelUp(HttpServletRequest request) {
+        return userInfoService.levelUp(request);
     }
 
     @DeleteMapping("/leave")

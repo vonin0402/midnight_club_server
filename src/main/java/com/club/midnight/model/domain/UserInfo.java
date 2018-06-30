@@ -22,4 +22,8 @@ public class UserInfo {
     public static UserInfo create(String id, String password, UserType userType) {
         return new UserInfo(id, encrypt(password), userType);
     }
+
+    public static UserInfo createForLogIn(UserInfo userInfo) {
+        return new UserInfo(userInfo.getId(), null, userInfo.getUserType());
+    }
 }
