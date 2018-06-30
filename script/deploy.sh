@@ -15,7 +15,7 @@ echo "
 BASE=$(cd $(dirname $(readlink $0 || echo $0))/..;/bin/pwd)
 
 SERVICE=midnight-club-server
-HOST=ec2-13-209-68-167.ap-northeast-2.compute.amazonaws.com
+HOST=ec2-52-78-164-222.ap-northeast-2.compute.amazonaws.com
 
 $BASE/gradlew clean build -x test -p $BASE
 
