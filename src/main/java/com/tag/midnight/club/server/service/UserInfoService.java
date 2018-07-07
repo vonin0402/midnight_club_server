@@ -1,10 +1,11 @@
-package com.club.midnight.service;
+package com.tag.midnight.club.server.service;
 
-import com.club.midnight.model.domain.UserInfo;
-import com.club.midnight.model.enums.UserType;
-import com.club.midnight.util.ExceptionLogUtils;
-import com.club.midnight.util.JsonUtils;
-import com.club.midnight.util.exception.JsonParsingException;
+import com.tag.midnight.club.server.util.CipherUtils;
+import com.tag.midnight.club.server.util.ExceptionLogUtils;
+import com.tag.midnight.club.server.util.JsonUtils;
+import com.tag.midnight.club.server.util.exception.JsonParsingException;
+import com.tag.midnight.club.server.model.domain.UserInfo;
+import com.tag.midnight.club.server.model.enums.UserType;
 import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
@@ -15,8 +16,6 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Map;
-
-import static com.club.midnight.util.CipherUtils.decrypt;
 
 @Slf4j
 @Service
@@ -80,7 +79,7 @@ public class UserInfoService implements InitializingBean {
     }
 
     private boolean isValidUser(UserInfo userInfo, String password) {
-        return userInfo != null && StringUtils.isNotEmpty(userInfo.getPassword()) && (decrypt(userInfo.getPassword())).equals(password);
+        return userInfo != null && StringUtils.isNotEmpty(userInfo.getPassword()) && (CipherUtils.decrypt(userInfo.getPassword())).equals(password);
     }
 
     private UserRequest getUserRequest(HttpServletRequest request) {

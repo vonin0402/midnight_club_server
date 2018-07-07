@@ -1,4 +1,4 @@
-package com.club.midnight.util;
+package com.tag.midnight.club.server.util;
 
 import org.apache.commons.codec.binary.Base64;
 

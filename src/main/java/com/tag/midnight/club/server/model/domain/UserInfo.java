@@ -1,12 +1,11 @@
-package com.club.midnight.model.domain;
+package com.tag.midnight.club.server.model.domain;
 
-import com.club.midnight.model.enums.UserType;
+import com.tag.midnight.club.server.util.CipherUtils;
+import com.tag.midnight.club.server.model.enums.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import static com.club.midnight.util.CipherUtils.encrypt;
 
 @Getter
 @Setter
@@ -20,7 +19,7 @@ public class UserInfo {
     private UserType userType;
 
     public static UserInfo create(String id, String password, UserType userType) {
-        return new UserInfo(id, encrypt(password), userType);
+        return new UserInfo(id, CipherUtils.encrypt(password), userType);
     }
 
     public static UserInfo createForLogIn(UserInfo userInfo) {

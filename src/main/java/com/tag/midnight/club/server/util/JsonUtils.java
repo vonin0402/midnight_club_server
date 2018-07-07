@@ -1,6 +1,6 @@
-package com.club.midnight.util;
+package com.tag.midnight.club.server.util;
 
-import com.club.midnight.util.exception.JsonParsingException;
+import com.tag.midnight.club.server.util.exception.JsonParsingException;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;

@@ -1,6 +1,6 @@
-package com.club.midnight.util.exception;
+package com.tag.midnight.club.server.util.exception;
 
-import com.club.midnight.common.exception.CustomException;
+import com.tag.midnight.club.server.common.exception.CustomException;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 public class JsonParsingException extends CustomException {

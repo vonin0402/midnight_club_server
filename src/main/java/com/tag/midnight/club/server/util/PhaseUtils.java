@@ -1,4 +1,4 @@
-package com.club.midnight.util;
+package com.tag.midnight.club.server.util;
 
 public abstract class PhaseUtils {
     private static final String ACTIVE_PROFILE = System.getProperty("spring.profiles.active");

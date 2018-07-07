@@ -1,6 +1,6 @@
-package com.club.midnight.controller;
+package com.tag.midnight.club.server.controller;
 
-import com.club.midnight.service.UserInfoService;
+import com.tag.midnight.club.server.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

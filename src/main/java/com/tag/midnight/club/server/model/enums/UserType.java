@@ -1,4 +1,4 @@
-package com.club.midnight.model.enums;
+package com.tag.midnight.club.server.model.enums;
 
 import lombok.AllArgsConstructor;
 
