@@ -1,17 +1,15 @@
 buildscript {
-    ext {
-        springBootVersion = "1.5.12.RELEASE"
-    }
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE")
     }
 }
 
 apply plugin: "java"
 apply plugin: "application"
+apply plugin: "eclipse"
 apply plugin: "org.springframework.boot"
 
 jar.archiveName = "midnight-club-server.jar"
@@ -38,7 +36,7 @@ dependencies {
 
     compile("joda-time:joda-time:2.9.6")
     compile("com.google.guava:guava:21.0")
-    compile("org.projectlombok:lombok:1.16.10")
+    compile("org.projectlombok:lombok:1.18.0")
     compile("org.apache.commons:commons-lang3:3.5")
     compile("commons-collections:commons-collections:3.2.2")
     compile("commons-io:commons-io:2.5")
